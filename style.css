@@ -1,0 +1,552 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(
+        circle at top,
+        #17264a,
+        #0b1430,
+        #050817
+    );
+    color: #e5edff;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+h1 {
+    font-size: clamp(35px, 8vw, 65px);
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px #8eb5ff;
+}
+
+p {
+    font-size: 19px;
+    color: #b7c9ed;
+    letter-spacing: 1px;
+}
+
+.stars,
+.stars2,
+.stars3 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: repeat;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 150px 120px, #a9c8ff, transparent),
+        radial-gradient(1px 1px at 250px 200px, white, transparent);
+    background-size: 300px 300px;
+    animation: starMove 60s linear infinite;
+}
+
+.stars2 {
+    background-image:
+        radial-gradient(1px 1px at 80px 90px, white, transparent),
+        radial-gradient(2px 2px at 220px 40px, #b9d5ff, transparent);
+    background-size: 350px 350px;
+    animation: starMove 100s linear infinite;
+    opacity: 0.6;
+}
+
+.stars3 {
+    background-image:
+        radial-gradient(2px 2px at 100px 180px, white, transparent),
+        radial-gradient(1px 1px at 280px 250px, #a9c8ff, transparent);
+    background-size: 400px 400px;
+    animation: starMove 140s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-300px);
+    }
+}
+
+.moon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 35%,
+        #ffffff,
+        #dce9ff 45%,
+        #91a9d7 75%,
+        #536b9a
+    );
+
+    box-shadow:
+        0 0 25px #a9c8ff,
+        0 0 60px #779de9,
+        0 0 110px #536b9a;
+
+    margin-bottom: 35px;
+    animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow {
+    from {
+        box-shadow:
+            0 0 20px #a9c8ff,
+            0 0 45px #779de9,
+            0 0 80px #536b9a;
+    }
+
+    to {
+        box-shadow:
+            0 0 35px #ffffff,
+            0 0 75px #779de9,
+            0 0 130px #536b9a;
+    }
+}
+
+.start-btn {
+    margin-top: 45px;
+    padding: 16px 32px;
+
+    background: rgba(130, 170, 255, 0.08);
+    color: #e5edff;
+
+    border: 1px solid #a9c8ff;
+    border-radius: 50px;
+
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #779de955,
+        inset 0 0 12px #779de922;
+
+    animation: buttonPulse 3s ease-in-out infinite;
+    transition: 0.4s;
+}
+
+.start-btn span {
+    margin-left: 10px;
+    color: #a9c8ff;
+}
+
+.start-btn:hover,
+.start-btn:active {
+    background: rgba(130, 170, 255, 0.22);
+    box-shadow:
+        0 0 25px #a9c8ff,
+        0 0 55px #779de977;
+    transform: scale(1.05);
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 12px #779de944;
+    }
+    50% {
+        box-shadow: 0 0 28px #779de999;
+    }
+}
+
+#welcome-message {
+    display: none;
+    margin-top: 35px;
+    color: #c5d7ff;
+    font-size: 17px;
+    animation: messageAppear 1.5s ease;
+}
+
+#welcome-message.show {
+    display: block;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chapter {
+    display: none;
+    width: 100%;
+    max-width: 650px;
+    margin: 100px auto 40px;
+    padding: 30px 25px;
+    text-align: center;
+    animation: chapterReveal 2s ease;
+}
+
+.chapter.show {
+    display: block;
+}
+
+.chapter-label {
+    color: #91b7ff;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.chapter h2 {
+    font-size: clamp(30px, 6vw, 46px);
+    font-weight: normal;
+    color: #edf3ff;
+    text-shadow: 0 0 20px #779de977;
+    margin-bottom: 25px;
+}
+
+.chapter-line {
+    width: 75px;
+    height: 1px;
+    background: #a9c8ff;
+    margin: 25px auto;
+    box-shadow: 0 0 12px #a9c8ff;
+}
+
+.chapter p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #b9c9e8;
+    margin-bottom: 22px;
+}
+
+.chapter-ending {
+    margin-top: 35px;
+    color: #d9e6ff;
+    font-size: 19px;
+    font-style: italic;
+}
+
+@keyframes chapterReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* CHAPTER 02 - CONSTELLATION */
+
+.constellation-section {
+    text-align: center;
+}
+
+.constellation {
+    position: relative;
+    width: 280px;
+    height: 220px;
+    margin: 45px auto;
+}
+
+.star-point {
+    position: absolute;
+    color: #d9e8ff;
+    font-size: 25px;
+    text-shadow:
+        0 0 8px #8bbcff,
+        0 0 20px #579aff,
+        0 0 35px #579aff;
+    animation: starGlow 2s infinite alternate;
+    z-index: 2;
+}
+
+.star-a { top: 15px; left: 25px; }
+.star-b { top: 75px; left: 95px; }
+.star-c { top: 5px; left: 190px; }
+.star-d { top: 145px; left: 165px; }
+.star-e { top: 165px; left: 45px; }
+
+.star-line {
+    position: absolute;
+    height: 1px;
+    background: rgba(135, 180, 255, 0.55);
+    transform-origin: left center;
+    box-shadow: 0 0 7px #579aff;
+    z-index: 1;
+}
+
+.line-a {
+    width: 95px;
+    top: 35px;
+    left: 43px;
+    transform: rotate(40deg);
+}
+
+.line-b {
+    width: 105px;
+    top: 93px;
+    left: 112px;
+    transform: rotate(-38deg);
+}
+
+.line-c {
+    width: 85px;
+    top: 25px;
+    left: 207px;
+    transform: rotate(115deg);
+}
+
+.line-d {
+    width: 130px;
+    top: 165px;
+    left: 65px;
+    transform: rotate(-10deg);
+}
+
+@keyframes starGlow {
+    from {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+/* CHAPTER 03 - LETTER */
+
+.letter-section {
+    text-align: center;
+}
+
+.envelope-container {
+    width: 260px;
+    height: 190px;
+    margin: 55px auto 25px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 35px;
+    filter: drop-shadow(0 0 18px rgba(91, 153, 255, 0.3));
+    transition: transform 0.5s ease;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #263b68;
+    border: 1px solid #7199d9;
+    border-radius: 5px;
+}
+
+.letter-paper {
+    position: absolute;
+    width: 88%;
+    height: 350px;
+    left: 6%;
+    top: 0px;
+    background: #e9eaff;
+    color: #182344;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: translateY(0);
+    transition: transform 0.8s ease;
+    z-index: 1;
+}
+
+.letter-paper span {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.letter-paper h3 {
+    font-family: Georgia, serif;
+    margin: 12px 0;
+}
+
+.letter-paper p {
+    font-size: 12px;
+}
+
+.letter-sign {
+    color: #5278bc;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #344e80;
+    clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #617fae;
+    clip-path: polygon(0 0, 100% 0, 50% 65%);
+    transform-origin: top;
+    transition: transform 0.7s ease;
+    z-index: 3;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-340px);
+  z-index: 5;
+}
+
+.open-hint {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a9caff;
+    animation: starGlow 2s infinite alternate;
+}
+/* LETTER VISIBILITY FIX */
+
+.envelope.open .letter-paper {
+    transform: translateY(-190px);
+    z-index: 5;
+}
+
+.envelope.open .envelope-flap {
+    z-index: 0;
+}
+
+.letter-paper {
+    height: 190px;
+}
+.letter-paper {
+    height: 350px;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1;
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-340px);
+    z-index: 5;
+}
+/* FINAL ENVELOPE FIX */
+
+.letter-paper {
+    clip-path: inset(0 0 200px 0);
+    transition:
+        transform 0.8s ease,
+        clip-path 0.8s ease;
+}
+
+.envelope.open .letter-paper {
+    clip-path: inset(0);
+    transform: translateY(-340px);
+    z-index: 5;
+}
+
+.envelope.open .envelope-flap {
+    z-index: 0;
+}
+/* CHAPTER 04 - FINAL BIRTHDAY WISH */
+
+.final-section {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.birthday-stars {
+    font-size: 35px;
+    letter-spacing: 20px;
+    color: #c5dcff;
+    margin: 35px 0;
+    text-shadow:
+        0 0 10px #78aaff,
+        0 0 25px #478cff,
+        0 0 45px #478cff;
+    animation: starGlow 2s infinite alternate;
+}
+
+.final-section h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    color: #e5edff;
+    text-shadow: 0 0 20px rgba(116, 165, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+.final-section h2 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    color: #a9caff;
+    text-shadow:
+        0 0 15px #579aff,
+        0 0 35px #579aff;
+    margin-top: 5px;
+}
+
+.final-section h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-style: italic;
+    color: #d4e1ff;
+    margin: 35px 15px;
+}
+
+.final-section p {
+    color: #b9c9e8;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.final-wish {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-style: italic;
+    color: #d9e7ff;
+    margin-top: 55px;
+    text-shadow: 0 0 20px #579aff;
+    animation: starGlow 2s infinite alternate;
+}
+.personal-message {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #dce8ff;
+    text-align: center;
+    margin: 65px 15px 30px;
+    padding: 20px;
+    text-shadow: 0 0 10px #579aff;
+    animation: none;
+    transform: none;
+}

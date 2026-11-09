@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anshita ✦</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+<div class="stars stars2"></div>
+<div class="stars stars3"></div>
+  <div class="moon"></div>
+
+    <h1>Happy Birthday, Anshita!</h1>
+    <p>A little universe, made just for you.</p>
+  <button class="start-btn" onclick="enterUniverse()">
+    ENTER YOUR UNIVERSE
+    <span>✦</span>
+</button>
+
+<div id="welcome-message">
+    Every beautiful story begins somewhere...
+</div>
+  
+<section id="chapter-one" class="chapter">
+    <div class="chapter-label">CHAPTER 01 · A LITTLE REMINDER</div>
+
+    <h2>Some people are special.</h2>
+
+    <div class="chapter-line"></div>
+
+    <p>
+        And sometimes, they don't even realise
+        how beautifully they impact the lives
+        of others.
+    </p>
+
+    <p>
+        They make ordinary moments memorable,
+        bring warmth into everyday conversations,
+        and leave behind memories worth keeping.
+    </p>
+
+    <div class="chapter-ending">
+        Perhaps, you're one of those people.
+        ✦
+    </div>
+</section>
+  <section id="chapter-two" class="chapter constellation-section">
+
+    <div class="chapter-label">CHAPTER 02 · A CONSTELLATION</div>
+
+    <h2>Every star has a story.</h2>
+
+    <div class="chapter-line"></div>
+
+    <p>
+        Some people shine without even trying.
+        Not because they seek attention,
+        but because of the little things
+        that make them who they are.
+    </p>
+
+    <div class="constellation">
+        <div class="star-point star-a">✦</div>
+        <div class="star-point star-b">✧</div>
+        <div class="star-point star-c">✦</div>
+        <div class="star-point star-d">✧</div>
+        <div class="star-point star-e">✦</div>
+
+        <div class="star-line line-a"></div>
+        <div class="star-line line-b"></div>
+        <div class="star-line line-c"></div>
+        <div class="star-line line-d"></div>
+    </div>
+
+    <div class="chapter-ending">
+        And some stars make the whole sky special. ✦
+    </div>
+
+</section>
+
+<!-- CHAPTER 03 - THE LETTER -->
+
+<section id="chapter-three" class="chapter letter-section">
+
+    <div class="chapter-label">CHAPTER 03 · FROM THE HEART</div>
+
+    <h2>A little something for you.</h2>
+
+    <p>
+        Some words are better kept in a letter.
+    </p>
+
+    <div class="envelope-container" onclick="openLetter()">
+
+        <div class="envelope" id="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="letter-paper">
+
+    <span>✦ A LITTLE LETTER ✦</span>
+
+    <h3>Dear Anshita,</h3>
+
+    <p>
+        Some people enter our lives
+        and make things a little brighter.
+    </p>
+
+    <p>
+        You're one of those people.
+    </p>
+
+    <p>
+        Thank you for being someone who cares,
+        someone whose cheerful nature can
+        brighten an ordinary day, and someone
+        I've been lucky enough to call my
+        best friend.
+    </p>
+
+    <p>
+        I may not always say it, but I truly
+        appreciate all the little things you do.
+    </p>
+
+    <p>
+        Your kindness, your happiness, and
+        your friendship mean more than
+        words can explain.
+    </p>
+
+    <h4>
+        The world is a little brighter with
+        you in it. ✦
+    </h4>
+
+    <div class="letter-sign">
+        With lots of appreciation,
+        <br>
+        Always. ✦
+    </div>
+
+</div>
+
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+
+        </div>
+
+    </div>
+
+    <div class="open-hint" id="open-hint">
+        TAP THE ENVELOPE TO OPEN ✦
+    </div>
+
+    <div class="chapter-ending">
+        A little surprise is waiting inside.
+    </div>
+
+  <!-- CHAPTER 04 - THE FINAL WISH -->
+
+<section id="chapter-four" class="chapter final-section">
+
+    <div class="chapter-label">
+        CHAPTER 04 · THE FINAL WISH
+    </div>
+
+    <div class="birthday-stars">✦ ✧ ✦</div>
+
+    <h1>Happy Birthday,</h1>
+
+    <h2>Anshita!</h2>
+
+    <div class="chapter-line"></div>
+
+    <h3>
+        To the brightest star in my universe...
+    </h3>
+
+    <p>
+        A little reminder that someone is
+        genuinely grateful to have you
+        in their life.
+    </p>
+
+    <p>
+        Your cheerful nature, your care,
+        and your friendship make this
+        world a little brighter.
+    </p>
+
+    <div class="final-wish">
+        Keep shining. Always. ✦
+    </div>
+
+    <div class="personal-message">
+    Bittu jii, love you so much.
+    <br>
+    Thank you for being my bestest best friend. ❤️
+</div>
+
+</section>
+
+</section>
+  
+<script>
+
+function enterUniverse() {
+    const message = document.getElementById("welcome-message");
+    const chapter = document.getElementById("chapter-one");
+    const chapterTwo = document.getElementById("chapter-two");
+  const chapterThree = document.getElementById("chapter-three");
+const chapterFour = document.getElementById("chapter-four");
+
+  
+    message.classList.add("show");
+    chapter.classList.add("show");
+    chapterTwo.classList.add("show");
+  chapterThree.classList.add("show");
+  chapterFour.classList.add("show");
+
+    setTimeout(() => {
+        chapter.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }, 300);
+}
+
+  function openLetter() {
+    const envelope = document.getElementById("envelope");
+    const hint = document.getElementById("open-hint");
+
+    envelope.classList.toggle("open");
+
+    if (envelope.classList.contains("open")) {
+        hint.innerText = "YOUR LITTLE LETTER IS OPEN ✦";
+    } else {
+        hint.innerText = "TAP THE ENVELOPE TO OPEN ✦";
+    }
+}
+  
+</script>
+
+</body>
+</html>
